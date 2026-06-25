@@ -8,25 +8,63 @@ import ForestSection from "./components/ForestSection.jsx";
 import HaruSection from "./components/HaruSection.jsx";
 import CtaSection from "./components/CtaSection.jsx";
 import Footer from "./components/Footer.jsx";
-import { featureHighlights, features } from "./data/siteContent.js";
+import LabPage from "./components/LabPage.jsx";
+import CustomScrollbar from "./components/CustomScrollbar.jsx";
+import SectionNav from "./components/SectionNav.jsx";
+import { featureHighlights } from "./data/siteContent.js";
+import { pages } from "./data/pages.js";
 
-export default function App() {
+const homeSectionNav = [
+  { label: "Home", href: "#home" },
+  { label: "Insight", href: "#insight" },
+  { label: "About", href: "#about" },
+  { label: "Areas", href: "#areas" },
+  { label: "Research", href: "#research" },
+  { label: "Location", href: "#location" },
+];
+
+function HomePage() {
   return (
-    <>
-      <Header />
-      <main>
+    <main className="home-page">
+      <div id="home">
         <Hero />
+      </div>
+      <div id="insight">
         <InsightSection />
+      </div>
+      <div id="about">
         <AboutSection />
+      </div>
+      <div id="areas">
         {featureHighlights.map((feature) => (
           <FeatureSection key={feature.title} feature={feature} />
         ))}
+      </div>
+      <div id="research">
         <KeyResearchAreasSection />
+      </div>
+      <div id="location">
         <ForestSection />
-        <HaruSection />
-        <CtaSection />
-      </main>
+      </div>
+      <HaruSection />
+      <CtaSection />
+      <div className="page-section-nav-wrap">
+        <SectionNav title="Home" items={homeSectionNav} />
+      </div>
+    </main>
+  );
+}
+
+export default function App() {
+  const pageKey = window.location.pathname.replace(/^\/+|\/+$/g, "") || "home";
+  const page = pages[pageKey];
+
+  return (
+    <>
+      <Header />
+      {page ? <LabPage page={page} /> : <HomePage />}
       <Footer />
+      <CustomScrollbar />
     </>
   );
 }

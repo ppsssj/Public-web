@@ -71,9 +71,9 @@ const researchImages = {
 };
 
 const featureHighlightImages = [
-  "https://lh3.googleusercontent.com/sitesv/AA5AbUCrLlf5oICtFreDhj-Eqa0Yy9mwrHmmPIC77dF6CBy6VWMUaqj-hoSN79l4_hZGzVW0L-mhETWGavqv19-MbGXUPvfhkh_5BgT28BRPAXcMzwWjkTrKXZ7Q1mpknUGY8pEKsA3I_6c4uou7IE2I5xeB6-UXnjLpVUYtPLURMYVEl6k83KBAC_k8W8a-8RIunYtgEuafJML_XX7B87VJsTIKeSiLSq0dJDun5gm2xRg=w1280",
-  "https://lh3.googleusercontent.com/sitesv/AA5AbUBAtyB1ngUT4P7bWtoMzmp_I9_rW4_HKD4JlJh8iU7_jAfhT3B-RH_fabDm8bKT213qlywjq-Egu7zQ_AL1DqsZKak83fnDnSGeYxchE4516eWZDYQW3v8Qe6Mc_59XyAVtmiQ3QTJsgcmdjH41fJyCk_E5nOFGWhgk3kLFfRwXQ_RgJh7HDVMTIYxZkUBupjP0wLubtIEJ-JIdwJvqLbmYKklgHUs1P1u7oeIfBDI=w1280",
-  "https://lh3.googleusercontent.com/sitesv/AA5AbUDlaipb5CFvzPjfu4s3Xx6dDIiGhX2qLIKM216dswF8sX10uAbQ-yoHcXLMcVRcJDXdBo--n6JW8wmZy5QWU3eK59W0AHd_g3JiA1rYZkG1oyZCp7FB9WfOt_4X67uOdS0yyHxYMqiJlOn4YYw0Y6O5flbr83lSJ9yDHSM3dtAuanm-76YdFVTpbIo06-E-M6dWTH69enjB47oFxhFGjS3RNoh3QtddgwmnsU6BwsA=w1280",
+  "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1600&q=80",
+  "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80",
+  "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=80",
 ];
 
 export const featureHighlights = [

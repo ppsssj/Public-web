@@ -1,9 +1,39 @@
+import { useEffect, useRef, useState } from "react";
 import ButtonLink from "./ButtonLink.jsx";
 import { assets } from "../data/siteContent.js";
 
 export default function AboutSection() {
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+
+    if (!section) {
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.25 }
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="about-section" style={{ backgroundImage: `url(${assets.aboutBackground})` }}>
+    <section
+      ref={sectionRef}
+      className={`about-section ${isVisible ? "is-visible" : ""}`}
+      style={{ backgroundImage: `url(${assets.aboutBackground})` }}
+    >
       <div className="inside about-grid">
         <div className="about-mark">
           <picture>

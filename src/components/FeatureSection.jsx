@@ -1,6 +1,32 @@
+import { useEffect, useRef, useState } from "react";
 import ButtonLink from "./ButtonLink.jsx";
 
 export default function FeatureSection({ feature }) {
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+
+    if (!section) {
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.28 }
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
   const image = (
     <picture className="feature-media">
       <source media="(max-width: 767px)" srcSet={feature.mobileImage} />
@@ -17,7 +43,10 @@ export default function FeatureSection({ feature }) {
   );
 
   return (
-    <section className={`feature-section feature-${feature.align}`}>
+    <section
+      ref={sectionRef}
+      className={`feature-section feature-${feature.align} ${isVisible ? "is-visible" : ""}`}
+    >
       <div className="feature-grid">{feature.align === "right" ? <>{image}{copy}</> : <>{copy}{image}</>}</div>
     </section>
   );

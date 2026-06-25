@@ -1,26 +1,24 @@
 import { useEffect, useState } from "react";
-
-const navigation = [
-  { label: "Home", href: "https://www.mujinassociates.com/home" },
-  { label: "Profile", href: "https://www.mujinassociates.com/HR-Consulting" },
-  { label: "Publication", href: "https://www.mujinassociates.com/Consulting01" },
-  { label: "Research", href: "https://www.mujinassociates.com/Consulting02" },
-  { label: "Lecture", href: "https://www.mujinassociates.com/Consulting03" },
-  { label: "Members", href: "https://www.mujinassociates.com/Consulting04" },
-  { label: "Events", href: "https://www.mujinassociates.com/mujininsight" },
-];
+import { pageNavigation } from "../data/pages.js";
 
 function MenuTree({ items, onNavigate }) {
+  const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
+
   return (
     <ul className="menu-tree">
-      {items.map((item) => (
-        <li key={item.label}>
-          <a href={item.href} onClick={onNavigate}>
-            {item.label}
-          </a>
-          {item.children ? <MenuTree items={item.children} onNavigate={onNavigate} /> : null}
-        </li>
-      ))}
+      {items.map((item) => {
+        const itemPath = item.href.replace(/\/+$/, "") || "/";
+        const isActive = currentPath === itemPath;
+
+        return (
+          <li key={item.label}>
+            <a href={item.href} onClick={onNavigate} aria-current={isActive ? "page" : undefined}>
+              {item.label}
+            </a>
+            {item.children ? <MenuTree items={item.children} onNavigate={onNavigate} /> : null}
+          </li>
+        );
+      })}
     </ul>
   );
 }
@@ -48,6 +46,10 @@ export default function Header() {
       const header = document.querySelector(".site-header");
 
       if (!heroTitle || !header) {
+        root.style.setProperty("--brand-top", "38px");
+        root.style.setProperty("--brand-scale", "1");
+        root.style.setProperty("--brand-bg-opacity", "1");
+        root.style.setProperty("--brand-color", "rgb(36, 36, 36)");
         return;
       }
 
@@ -114,7 +116,7 @@ export default function Header() {
           <span />
           <b>MENU</b>
         </button>
-        <a className="brand" href="https://www.mujinassociates.com/">
+        <a className="brand" href="/">
           A   I   C   S
         </a>
         {/* <div className="header-logo">
@@ -129,7 +131,7 @@ export default function Header() {
           aria-label="메뉴 닫기"
           onClick={() => setOpen(false)}
         />
-        <MenuTree items={navigation} onNavigate={() => setOpen(false)} />
+        <MenuTree items={pageNavigation} onNavigate={() => setOpen(false)} />
       </div>
       {open ? <button className="menu-backdrop" aria-label="메뉴 닫기" onClick={() => setOpen(false)} /> : null}
     </>

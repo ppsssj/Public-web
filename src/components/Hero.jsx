@@ -1,13 +1,18 @@
-import { assets } from "../data/siteContent.js";
+import { useEffect, useRef } from "react";
 
 export default function Hero() {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.5;
+    }
+  }, []);
+
   return (
     <section className="hero">
       <div className="hero-media" aria-hidden="true">
-        <picture>
-          <source media="(max-width: 767px)" srcSet={assets.heroMobile} />
-          <img src={assets.heroDesktop} alt="" />
-        </picture>
+        <video ref={videoRef} autoPlay muted loop playsInline src="/a.mp4" />
       </div>
       <div className="hero-content desktop-only">
         <h1 className="hero-title-desktop">A   I   C   S</h1>
