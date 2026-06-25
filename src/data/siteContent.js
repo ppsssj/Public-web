@@ -63,7 +63,14 @@ export const navigation = [
   },
 ];
 
-const researchImages = [
+const researchImages = {
+  stock: "/Research/enhancing%20stock.jpg",
+  chartExplanation: "/Research/a%20realtime.webp",
+  fontRecommendation: "/Research/Implementing%20and.jpg",
+  symbolNet: "/Research/symbolnet.jpg",
+};
+
+const featureHighlightImages = [
   "https://lh3.googleusercontent.com/sitesv/AA5AbUCrLlf5oICtFreDhj-Eqa0Yy9mwrHmmPIC77dF6CBy6VWMUaqj-hoSN79l4_hZGzVW0L-mhETWGavqv19-MbGXUPvfhkh_5BgT28BRPAXcMzwWjkTrKXZ7Q1mpknUGY8pEKsA3I_6c4uou7IE2I5xeB6-UXnjLpVUYtPLURMYVEl6k83KBAC_k8W8a-8RIunYtgEuafJML_XX7B87VJsTIKeSiLSq0dJDun5gm2xRg=w1280",
   "https://lh3.googleusercontent.com/sitesv/AA5AbUBAtyB1ngUT4P7bWtoMzmp_I9_rW4_HKD4JlJh8iU7_jAfhT3B-RH_fabDm8bKT213qlywjq-Egu7zQ_AL1DqsZKak83fnDnSGeYxchE4516eWZDYQW3v8Qe6Mc_59XyAVtmiQ3QTJsgcmdjH41fJyCk_E5nOFGWhgk3kLFfRwXQ_RgJh7HDVMTIYxZkUBupjP0wLubtIEJ-JIdwJvqLbmYKklgHUs1P1u7oeIfBDI=w1280",
   "https://lh3.googleusercontent.com/sitesv/AA5AbUDlaipb5CFvzPjfu4s3Xx6dDIiGhX2qLIKM216dswF8sX10uAbQ-yoHcXLMcVRcJDXdBo--n6JW8wmZy5QWU3eK59W0AHd_g3JiA1rYZkG1oyZCp7FB9WfOt_4X67uOdS0yyHxYMqiJlOn4YYw0Y6O5flbr83lSJ9yDHSM3dtAuanm-76YdFVTpbIo06-E-M6dWTH69enjB47oFxhFGjS3RNoh3QtddgwmnsU6BwsA=w1280",
@@ -74,24 +81,24 @@ export const featureHighlights = [
     title: "Financial Time-Series Analysis & Prediction.",
     text: "금융 시계열 데이터의 패턴을 분석하고,\n예측 모델을 통해 의사결정에 필요한 인사이트를 연구합니다.",
     href: "#",
-    image: researchImages[0],
-    mobileImage: researchImages[0],
+    image: featureHighlightImages[0],
+    mobileImage: featureHighlightImages[0],
     align: "right",
   },
   {
     title: "Visual Information Processing & AI Applications.",
     text: "시각 정보를 이해하고 처리하는 AI 기술을 바탕으로\n현실 문제에 적용 가능한 지능형 응용 시스템을 연구합니다.",
     href: "#",
-    image: researchImages[1],
-    mobileImage: researchImages[1],
+    image: featureHighlightImages[1],
+    mobileImage: featureHighlightImages[1],
     align: "left",
   },
   {
     title: "Accessibility & Explainable AI.",
     text: "모두가 접근 가능한 AI와 설명 가능한 모델을 통해\n사용자가 신뢰할 수 있는 인공지능 기술을 연구합니다.",
     href: "#",
-    image: researchImages[2],
-    mobileImage: researchImages[2],
+    image: featureHighlightImages[2],
+    mobileImage: featureHighlightImages[2],
     align: "right",
   },
 ];
@@ -101,32 +108,32 @@ export const features = [
     title: "Enhancing stock market trend reversal prediction using feature-enriched neural networks.",
     text: "Feature-enriched neural networks for precise stock trend reversal prediction.",
     href: "https://www.cell.com/heliyon/fulltext/S2405-8440%2824%2900167-1",
-    image: researchImages[0],
-    mobileImage: researchImages[0],
+    image: researchImages.stock,
+    mobileImage: researchImages.stock,
     align: "right",
   },
   {
     title: "A Real-Time Chart Explanation System for Visually Impaired Individuals.",
     text: "A real-time chart explanation system designed for accessibility and clarity.",
     href: "https://link.springer.com/chapter/10.1007/978-3-031-62846-7_37",
-    image: researchImages[1],
-    mobileImage: researchImages[1],
+    image: researchImages.chartExplanation,
+    mobileImage: researchImages.chartExplanation,
     align: "left",
   },
   {
     title: "Implementing and Evaluating a Font Recommendation System Through Emotion-Based Content-Font Mapping.",
     text: "Emotion-based content-font mapping for smarter font recommendation systems.",
     href: "https://www.mdpi.com/2076-3417/14/3/1123",
-    image: researchImages[2],
-    mobileImage: researchImages[2],
+    image: researchImages.fontRecommendation,
+    mobileImage: researchImages.fontRecommendation,
     align: "right",
   },
   {
     title: "SymbolNet: Bridging Latent Neural Representations and Symbolic Reasoning via Intermediate Feature Interpretation.",
     text: "Bridging latent neural representations and symbolic reasoning through feature interpretation.",
     href: "https://ieeexplore.ieee.org/abstract/document/10980088",
-    image: researchImages[0],
-    mobileImage: researchImages[0],
+    image: researchImages.symbolNet,
+    mobileImage: researchImages.symbolNet,
     align: "left",
   },
 ];

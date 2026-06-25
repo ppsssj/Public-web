@@ -1,5 +1,14 @@
 import { useEffect, useState } from "react";
-import { navigation } from "../data/siteContent.js";
+
+const navigation = [
+  { label: "Home", href: "https://www.mujinassociates.com/home" },
+  { label: "Profile", href: "https://www.mujinassociates.com/HR-Consulting" },
+  { label: "Publication", href: "https://www.mujinassociates.com/Consulting01" },
+  { label: "Research", href: "https://www.mujinassociates.com/Consulting02" },
+  { label: "Lecture", href: "https://www.mujinassociates.com/Consulting03" },
+  { label: "Members", href: "https://www.mujinassociates.com/Consulting04" },
+  { label: "Events", href: "https://www.mujinassociates.com/mujininsight" },
+];
 
 function MenuTree({ items, onNavigate }) {
   return (
