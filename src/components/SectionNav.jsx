@@ -28,6 +28,34 @@ export default function SectionNav({ title, items }) {
     };
   }, []);
 
+  useEffect(() => {
+    const onScrollActive = () => {
+      const mid = window.innerHeight * 0.5;
+      for (const item of items) {
+        try {
+          const el = document.querySelector(item.href);
+          if (!el) continue;
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= mid && rect.bottom >= mid) {
+            setActiveHref(item.href);
+            return;
+          }
+        } catch (e) {
+          // ignore malformed selector
+        }
+      }
+    };
+
+    onScrollActive();
+    window.addEventListener("scroll", onScrollActive, { passive: true });
+    window.addEventListener("resize", onScrollActive);
+
+    return () => {
+      window.removeEventListener("scroll", onScrollActive);
+      window.removeEventListener("resize", onScrollActive);
+    };
+  }, [items]);
+
   return (
     <nav className={`page-section-nav ${isVisible ? "is-visible" : ""}`} aria-label={`${title} sections`}>
       <img className="page-section-nav-logo" src="/Logo/aics-favicon.png" alt="" />
@@ -37,7 +65,12 @@ export default function SectionNav({ title, items }) {
             className={activeHref === item.href ? "is-active" : ""}
             href={item.href}
             key={`${item.label}-${item.href}`}
-            onClick={() => setActiveHref(item.href)}
+            onClick={(e) => {
+              e.preventDefault();
+              const target = document.querySelector(item.href);
+              if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+              setActiveHref(item.href);
+            }}
           >
             {item.label}
           </a>

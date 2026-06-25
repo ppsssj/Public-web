@@ -1452,7 +1452,7 @@ button {
   border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: 5px;
   color: rgba(255, 255, 255, 0.72);
-  background: rgba(255, 255, 255, 0.03);
+  background: #000;
   font-size: 10px;
   font-weight: 400;
   line-height: 1;
@@ -1468,7 +1468,7 @@ button {
 
 .page-section-nav a.is-active {
   color: #fff;
-  background: #5f788b;
+  background: #000;
   border-color: #5f788b;
 }
 
