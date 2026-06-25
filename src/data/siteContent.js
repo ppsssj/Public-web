@@ -11,10 +11,24 @@ export const assets = {
   hrMobileImage: `${cdn}/20241224/8823c6e57d6cc.png`,
   mindfulnessImage: `${cdn}/20250106/f01f3c88a64e4.jpg`,
   mindfulnessMobileImage: `${cdn}/20241224/425a9540d32ae.png`,
-  forestCover: `${cdn}/20241224/203e4d7159b15.png`,
   haruDevice: `${cdn}/20241223/fd84ee1785027.png`,
   haruLogo: `${cdn}/20241223/a2cc25a09d1e4.png`,
   haruMobileLogo: `${cdn}/20241224/a41a89eb8e310.png`,
+};
+
+const labAddress = "충남 아산시 순천향로 22-11 멀티미디어 5층 509호";
+const encodedLabAddress = encodeURIComponent(labAddress);
+
+export const labLocation = {
+  title: "연구실 위치",
+  address: labAddress,
+  mapSrc: `https://www.google.com/maps?q=${encodedLabAddress}&output=embed`,
+  mapHref: `https://www.google.com/maps/search/?api=1&query=${encodedLabAddress}`,
+  details: [
+    { label: "주소", value: labAddress },
+    { label: "건물/호실", value: "멀티미디어관 5층 509호" },
+    { label: "캠퍼스", value: "순천향대학교 아산캠퍼스" },
+  ],
 };
 
 export const navigation = [
@@ -46,6 +60,39 @@ export const navigation = [
       { label: "무진 Insight", href: "https://www.mujinassociates.com/mujininsight" },
       { label: "협업 및 프로그램 문의", href: "https://www.mujinassociates.com/contact" },
     ],
+  },
+];
+
+const researchImages = [
+  "https://lh3.googleusercontent.com/sitesv/AA5AbUCrLlf5oICtFreDhj-Eqa0Yy9mwrHmmPIC77dF6CBy6VWMUaqj-hoSN79l4_hZGzVW0L-mhETWGavqv19-MbGXUPvfhkh_5BgT28BRPAXcMzwWjkTrKXZ7Q1mpknUGY8pEKsA3I_6c4uou7IE2I5xeB6-UXnjLpVUYtPLURMYVEl6k83KBAC_k8W8a-8RIunYtgEuafJML_XX7B87VJsTIKeSiLSq0dJDun5gm2xRg=w1280",
+  "https://lh3.googleusercontent.com/sitesv/AA5AbUBAtyB1ngUT4P7bWtoMzmp_I9_rW4_HKD4JlJh8iU7_jAfhT3B-RH_fabDm8bKT213qlywjq-Egu7zQ_AL1DqsZKak83fnDnSGeYxchE4516eWZDYQW3v8Qe6Mc_59XyAVtmiQ3QTJsgcmdjH41fJyCk_E5nOFGWhgk3kLFfRwXQ_RgJh7HDVMTIYxZkUBupjP0wLubtIEJ-JIdwJvqLbmYKklgHUs1P1u7oeIfBDI=w1280",
+  "https://lh3.googleusercontent.com/sitesv/AA5AbUDlaipb5CFvzPjfu4s3Xx6dDIiGhX2qLIKM216dswF8sX10uAbQ-yoHcXLMcVRcJDXdBo--n6JW8wmZy5QWU3eK59W0AHd_g3JiA1rYZkG1oyZCp7FB9WfOt_4X67uOdS0yyHxYMqiJlOn4YYw0Y6O5flbr83lSJ9yDHSM3dtAuanm-76YdFVTpbIo06-E-M6dWTH69enjB47oFxhFGjS3RNoh3QtddgwmnsU6BwsA=w1280",
+];
+
+export const features = [
+  {
+    title: "Financial Time-Series Analysis & Prediction",
+    text: "금융 시계열 데이터의 패턴을 분석하고,\n예측 모델을 통해 의사결정에 필요한 인사이트를 연구합니다.",
+    href: "#",
+    image: researchImages[0],
+    mobileImage: researchImages[0],
+    align: "right",
+  },
+  {
+    title: "Visual Information Processing & AI Applications",
+    text: "시각 정보를 이해하고 처리하는 AI 기술을 바탕으로\n현실 문제에 적용 가능한 지능형 응용 시스템을 연구합니다.",
+    href: "#",
+    image: researchImages[1],
+    mobileImage: researchImages[1],
+    align: "left",
+  },
+  {
+    title: "Accessibility & Explainable AI",
+    text: "모두가 접근 가능한 AI와 설명 가능한 모델을 통해\n사용자가 신뢰할 수 있는 인공지능 기술을 연구합니다.",
+    href: "#",
+    image: researchImages[2],
+    mobileImage: researchImages[2],
+    align: "right",
   },
 ];
 
@@ -84,25 +131,6 @@ export const insightPosts = [
   },
 ];
 
-export const features = [
-  {
-    title: "HR Consulting",
-    text: "인적자원에 대한 통찰력 있는 노하우와 풍부한 경험을 바탕으로\n핵심 문제 중심의 솔루션을 제공합니다.",
-    href: "https://www.mujinassociates.com/HR-Consulting",
-    image: assets.hrImage,
-    mobileImage: assets.hrMobileImage,
-    align: "right",
-  },
-  {
-    title: "Mindfulness Services",
-    text: "국내 최초 기업 고객을 대상으로 특화된 과학기반 마음챙김 솔루션을\n맞춤형으로 개발 및 서비스하고 있습니다.",
-    href: "https://www.mujinassociates.com/mindservice",
-    image: assets.mindfulnessImage,
-    mobileImage: assets.mindfulnessMobileImage,
-    align: "left",
-  },
-];
-
 export const forestInfo = [
   {
     label: "주소",
@@ -115,10 +143,4 @@ export const forestInfo = [
     label: "구비 시설",
     value: "제네바 3세대 스피커 구비 (블루투스, CD, 이어폰 단자로 이용가능)\n스탠드형 TV, 방석, 매트, 싱잉볼 구비",
   },
-];
-
-export const forestGallery = [
-  `${cdn}/20241230/401942393b986.png`,
-  `${cdn}/20241230/1138821871ac1.png`,
-  `${cdn}/20241230/fac7ea0e9b44f.png`,
 ];

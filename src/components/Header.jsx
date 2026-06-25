@@ -37,7 +37,9 @@ export default function Header() {
         <a className="brand" href="https://www.mujinassociates.com/">
           A   I   C   S
         </a>
-        <div className="header-spacer" aria-hidden="true" />
+        <div className="header-logo">
+          <img src="/Logo/sch_Logo.png?v=1" alt="순천향대학교" />
+        </div>
       </header>
 
       <div className={`slide-menu ${open ? "is-open" : ""}`} aria-hidden={!open}>
