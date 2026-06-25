@@ -6,7 +6,9 @@ export default function SectionNav({ title, items }) {
 
   useEffect(() => {
     const updateVisibility = () => {
-      const hasHeroMotion = Boolean(document.querySelector(".hero-title-desktop"));
+      const hasHeroMotion = Boolean(
+        document.querySelector(".hero-title-desktop"),
+      );
 
       if (!hasHeroMotion) {
         setIsVisible(true);
@@ -14,7 +16,10 @@ export default function SectionNav({ title, items }) {
       }
 
       const progressDistance = Math.min(window.innerHeight * 0.72, 620);
-      const progress = Math.min(Math.max(window.scrollY / progressDistance, 0), 1);
+      const progress = Math.min(
+        Math.max(window.scrollY / progressDistance, 0),
+        1,
+      );
       setIsVisible(progress >= 0.82);
     };
 
@@ -57,8 +62,15 @@ export default function SectionNav({ title, items }) {
   }, [items]);
 
   return (
-    <nav className={`page-section-nav ${isVisible ? "is-visible" : ""}`} aria-label={`${title} sections`}>
-      <img className="page-section-nav-logo" src="/Logo/aics-favicon.png" alt="" />
+    <nav
+      className={`page-section-nav ${isVisible ? "is-visible" : ""}`}
+      aria-label={`${title} sections`}
+    >
+      <img
+        className="page-section-nav-logo"
+        src="/Logo/aics-favicon.png"
+        alt=""
+      />
       <div className="page-section-nav-links">
         {items.map((item) => (
           <a
@@ -68,7 +80,8 @@ export default function SectionNav({ title, items }) {
             onClick={(e) => {
               e.preventDefault();
               const target = document.querySelector(item.href);
-              if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+              if (target)
+                target.scrollIntoView({ behavior: "smooth", block: "start" });
               setActiveHref(item.href);
             }}
           >

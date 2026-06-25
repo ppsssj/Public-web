@@ -252,11 +252,11 @@ button {
   transition: color 0.18s ease, font-size 0.18s ease, font-weight 0.18s ease;
 }
 
-.menu-tree > li:first-child {
+.menu-tree>li:first-child {
   padding-top: 10px;
 }
 
-.menu-tree > li > a {
+.menu-tree>li>a {
   color: rgba(255, 255, 255, 0.62);
 }
 
@@ -285,6 +285,7 @@ button {
   from {
     clip-path: inset(0 0 100% 0);
   }
+
   to {
     clip-path: inset(0);
   }
@@ -295,6 +296,7 @@ button {
     opacity: 0;
     transform: translateY(42px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -306,6 +308,7 @@ button {
     opacity: 0;
     transform: translateX(72px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -317,6 +320,7 @@ button {
     opacity: 0;
     transform: translateX(-72px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -565,6 +569,7 @@ button {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .about-mark,
   .about-copy,
   .feature-copy {
@@ -1036,7 +1041,7 @@ button {
 
 .professor-panel h2,
 .profile-history h2,
-.research-project-list > h2,
+.research-project-list>h2,
 .lecture-meta h2,
 .member-group-title {
   margin: 0;
@@ -1046,7 +1051,7 @@ button {
   font-weight: 800;
 }
 
-.professor-panel > p {
+.professor-panel>p {
   margin: 12px 0 24px;
   color: var(--muted);
   font-size: 16px;
@@ -1098,9 +1103,9 @@ button {
   border-bottom: 1px solid var(--line);
 }
 
-.profile-timeline-item > span,
-.research-project-row > div:last-child > span,
-.lecture-meta > span,
+.profile-timeline-item>span,
+.research-project-row>div:last-child>span,
+.lecture-meta>span,
 .event-card time {
   color: var(--dark);
   font-size: 13px;
@@ -1168,7 +1173,7 @@ button {
   border-bottom: 1px solid var(--line);
 }
 
-.publication-row > span {
+.publication-row>span {
   color: var(--dark);
   font-size: 26px;
   font-weight: 800;
@@ -1204,7 +1209,7 @@ button {
   background: #fff;
 }
 
-.research-topic-card > span {
+.research-topic-card>span {
   color: var(--muted);
   font-size: 14px;
   font-weight: 800;
@@ -1353,7 +1358,7 @@ button {
   font-size: 15px;
 }
 
-.member-card > span {
+.member-card>span {
   color: var(--dark);
   font-size: 13px;
   font-weight: 800;
@@ -1561,6 +1566,7 @@ button {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -2036,7 +2042,7 @@ button {
 
   .professor-panel h2,
   .profile-history h2,
-  .research-project-list > h2,
+  .research-project-list>h2,
   .lecture-meta h2,
   .member-group-title {
     font-size: 26px;
