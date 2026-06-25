@@ -8,7 +8,7 @@ export default function Hero() {
         <img src={assets.heroDesktop} alt="" />
       </picture>
       <div className="hero-content desktop-only">
-        <h1>A   I  C  S</h1>
+        <h1 className="hero-title-desktop">A   I   C   S</h1>
         <i aria-hidden="true" />
         <p>Artificial Intelligence Convergence Software</p>
       </div>
